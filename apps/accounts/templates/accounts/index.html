@@ -1,10 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title> BUS SING </title>
-</head>
-<body>
-    <p> hello </p>
-</body>
-</html>
+{% extends 'base.html' %}
+
+{% block content %}
+
+WELCOME TO OUR APP
+
+<h2> sign up here </h2>
+
+
+<a href="{% url 'accounts:signup' %}">Click to register</a>
+{% endblock %}
