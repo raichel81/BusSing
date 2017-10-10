@@ -11,7 +11,7 @@ from .views import index
 
 class SignUpTests(TestCase):
     def setUp(self):
-        url = reverse('/index')
+        url = reverse('accounts:index')
         self.response = self.client.get(url)
 
     def test_index_view_status_code(self):
