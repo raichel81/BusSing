@@ -4,5 +4,5 @@ from __future__ import unicode_literals
 from django.apps import AppConfig
 
 
-class BusesConfig(AppConfig):
-    name = 'buses'
+class RoutesConfig(AppConfig):
+    name = 'routes'

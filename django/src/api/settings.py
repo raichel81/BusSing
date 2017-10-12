@@ -38,7 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
-    'buses.apps.BusesConfig',
+    'routes.apps.RoutesConfig',
     
 ]
 
@@ -70,7 +70,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'busSing.wsgi.application'
+WSGI_APPLICATION = 'api.wsgi.application'
 
 
 # Database

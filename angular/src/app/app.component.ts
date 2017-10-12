@@ -23,7 +23,7 @@ export class AppComponent implements OnInit {
   
   constructor(private http: HttpClient){}
   ngOnInit(): void {
-    this.http.get<BusResponse>('http://localhost:4200/buses').subscribe(data => {
+    this.http.get<RouteResponse>('http://localhost:4200/routes').subscribe(data => {
       this.data = data;
       this.url = data.url;
       this.title = data.title;
@@ -49,7 +49,7 @@ export class AppComponent implements OnInit {
 }
 
 
-interface BusResponse {
+interface RouteResponse {
   url: string;
   title: string;
   code: string;

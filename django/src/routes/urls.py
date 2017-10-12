@@ -1,10 +1,10 @@
 from django.conf.urls import url, include
-from snippets import views
+from . import views
 from rest_framework.routers import DefaultRouter
 
 # Create a router and register our viewsets with it.
 router = DefaultRouter()
-router.register(r'buses', views.BusViewSet)
+router.register(r'routes', views.RouteViewSet)
 router.register(r'users', views.UserViewSet)
 
 # The API URLs are now determined automatically by the router.
