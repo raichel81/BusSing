@@ -52,7 +52,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'busSing.urls'
+ROOT_URLCONF = 'api.urls'
 
 TEMPLATES = [
     {

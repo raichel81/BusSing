@@ -11,7 +11,7 @@ LANGUAGE_CHOICES = sorted([(item[1][0], item[0]) for item in LEXERS])
 STYLE_CHOICES = sorted((item, item) for item in get_all_styles())
 
 
-class Snippet(models.Model):
+class Bus(models.Model):
     created = models.DateTimeField(auto_now_add=True)
     title = models.CharField(max_length=100, blank=True, default='')
     code = models.TextField()
@@ -27,7 +27,7 @@ class Snippet(models.Model):
     def save(self, *args, **kwargs):
         """
         Use the `pygments` library to create a highlighted HTML
-        representation of the code snippet.
+        representation of the bus.
         """
         lexer = get_lexer_by_name(self.language)
         linenos = self.linenos and 'table' or False
@@ -35,40 +35,28 @@ class Snippet(models.Model):
         formatter = HtmlFormatter(style=self.style, linenos=linenos,
                                 full=True, **options)
         self.highlighted = highlight(self.code, lexer, formatter)
-        super(Snippet, self).save(*args, **kwargs)
+        super(Bus, self).save(*args, **kwargs)
 
 
-class RoutesManager(models.Manager):
-    def get_routes(self):
-        ROUTES = []
-        options = Routes.objects.all()
-        for route in options:
-            ROUTES.append(route.routeName)
-        return ROUTES
 
 class Routes(models.Model):
     routeCode = models.CharField(max_length=5)
     routeName = models.CharField(max_length=255)
-    created_at = models.DateTimeField(auto_now_add=True)
-    updated_at = models.DateTimeField(auto_now=True)
-    objects = RoutesManager()
+    # created = models.DateTimeField(auto_now_add=True)
 
 class Stops(models.Model):
     stopCode = models.CharField(max_length=5)
     stopName = models.CharField(max_length=255)
-    created_at = models.DateTimeField(auto_now_add=True)
-    updated_at = models.DateTimeField(auto_now=True)
+    # created = models.DateTimeField(auto_now_add=True)
 
 class Patterns(models.Model):
-    route = models.ForeignKey(Routes, related_name='patterns')
-    stop = models.ForeignKey(Stops, related_name='patterns')
-    created_at = models.DateTimeField(auto_now_add=True)
-    updated_at = models.DateTimeField(auto_now=True)
+    # route = models.ForeignKey(Routes, related_name='patterns')
+    # stop = models.ForeignKey(Stops, related_name='patterns')
+    # created = models.DateTimeField(auto_now_add=True)
 
 class Trips(models.Model):
-    pattern = models.ForeignKey(Patterns, related_name='trips')
+    # pattern = models.ForeignKey(Patterns, related_name='trips')
     depart = models.DateTimeField()
     boarded = models.IntegerField()
     alighted = models.IntegerField()
-    created_at = models.DateTimeField(auto_now_add=True)
-    updated_at = models.DateTimeField(auto_now=True)
+    # created = models.DateTimeField(auto_now_add=True)
