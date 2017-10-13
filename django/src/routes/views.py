@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
-from routes.models import Routes
-from routes.serializers import RouteSerializer, UserSerializer
+from routes.models import *
+from routes.serializers import *
 from rest_framework import generics, permissions
 from django.contrib.auth.models import User
 from routes.permissions import IsOwnerOrReadOnly
@@ -18,6 +18,7 @@ class UserViewSet(viewsets.ReadOnlyModelViewSet):
     """
     queryset = User.objects.all()
     serializer_class = UserSerializer
+
 
 class RouteViewSet(viewsets.ModelViewSet):
     """
@@ -38,3 +39,47 @@ class RouteViewSet(viewsets.ModelViewSet):
 
     def perform_create(self, serializer):
         serializer.save(owner=self.request.user)
+
+class StopViewSet(viewsets.ModelViewSet):
+    queryset = Stops.objects.all()
+    serializer_class = StopSerializer
+    permission_classes = (permissions.IsAuthenticatedOrReadOnly,
+                          IsOwnerOrReadOnly,)
+
+    @detail_route(renderer_classes=[renderers.StaticHTMLRenderer])
+    def highlight(self, request, *args, **kwargs):
+        stop = self.get_object()
+        return Response(stop.highlighted)
+
+    def perform_create(self, serializer):
+        serializer.save(owner=self.request.user)
+
+class PatternViewSet(viewsets.ModelViewSet):
+    queryset = Patterns.objects.all()
+    serializer_class = PatternSerializer
+    permission_classes = (permissions.IsAuthenticatedOrReadOnly,
+                          IsOwnerOrReadOnly,)
+
+    @detail_route(renderer_classes=[renderers.StaticHTMLRenderer])
+    def highlight(self, request, *args, **kwargs):
+        pattern = self.get_object()
+        return Response(pattern.highlighted)
+
+    def perform_create(self, serializer):
+        serializer.save(owner=self.request.user)
+
+class TripViewSet(viewsets.ModelViewSet):
+    queryset = Trips.objects.all()
+    serializer_class = TripSerializer
+    permission_classes = (permissions.IsAuthenticatedOrReadOnly,
+                          IsOwnerOrReadOnly,)
+
+    @detail_route(renderer_classes=[renderers.StaticHTMLRenderer])
+    def highlight(self, request, *args, **kwargs):
+        trip = self.get_object()
+        return Response(trip.highlighted)
+
+    def perform_create(self, serializer):
+        serializer.save(owner=self.request.user)
+
+
