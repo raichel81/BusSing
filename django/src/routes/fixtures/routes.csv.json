@@ -1,0 +1,138 @@
+[
+    {
+        "pk": 1,
+        "model": "Routes",
+        "fields": {
+            "routeCode": "HWD",
+            "routeName": "Hethwood"
+        }
+    },
+    {
+        "pk": 2,
+        "model": "Routes",
+        "fields": {
+            "routeCode": "UCB",
+            "routeName": "University City Blvd"
+        }
+    },
+    {
+        "pk": 3,
+        "model": "Routes",
+        "fields": {
+            "routeCode": "MSS",
+            "routeName": "Main Street - South"
+        }
+    },
+    {
+        "pk": 4,
+        "model": "Routes",
+        "fields": {
+            "routeCode": "HXP",
+            "routeName": "Hokie Express"
+        }
+    },
+    {
+        "pk": 5,
+        "model": "Routes",
+        "fields": {
+            "routeCode": "TC",
+            "routeName": "Toms Creek"
+        }
+    },
+    {
+        "pk": 6,
+        "model": "Routes",
+        "fields": {
+            "routeCode": "MSN",
+            "routeName": "Main Street - North"
+        }
+    },
+    {
+        "pk": 7,
+        "model": "Routes",
+        "fields": {
+            "routeCode": "HDG",
+            "routeName": "Harding Ave"
+        }
+    },
+    {
+        "pk": 8,
+        "model": "Routes",
+        "fields": {
+            "routeCode": "TTT",
+            "routeName": "Two Town Trolley"
+        }
+    },
+    {
+        "pk": 9,
+        "model": "Routes",
+        "fields": {
+            "routeCode": "CRC",
+            "routeName": "Corporate Research Center"
+        }
+    },
+    {
+        "pk": 10,
+        "model": "Routes",
+        "fields": {
+            "routeCode": "HWB",
+            "routeName": "Hethwood B"
+        }
+    },
+    {
+        "pk": 11,
+        "model": "Routes",
+        "fields": {
+            "routeCode": "CBD",
+            "routeName": "Carpenter Blvd."
+        }
+    },
+    {
+        "pk": 12,
+        "model": "Routes",
+        "fields": {
+            "routeCode": "PRG",
+            "routeName": "Progress Street"
+        }
+    },
+    {
+        "pk": 13,
+        "model": "Routes",
+        "fields": {
+            "routeCode": "HWA",
+            "routeName": "Hethwood A"
+        }
+    },
+    {
+        "pk": 14,
+        "model": "Routes",
+        "fields": {
+            "routeCode": "PHD",
+            "routeName": "Patrick Henry"
+        }
+    },
+    {
+        "pk": 15,
+        "model": "Routes",
+        "fields": {
+            "routeCode": "BTC",
+            "routeName": "BT Commuter"
+        }
+    },
+    {
+        "pk": 16,
+        "model": "Routes",
+        "fields": {
+            "routeCode": "TE",
+            "routeName": "The Explorer"
+        }
+    },
+    {
+        "pk": 17,
+        "model": "Routes",
+        "fields": {
+            "routeCode": "UMS",
+            "routeName": "University Mall Shuttle"
+        }
+    }
+]

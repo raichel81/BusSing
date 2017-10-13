@@ -40,13 +40,13 @@ from django.db import models
 
 
 class Routes(models.Model):
-    routeCode = models.CharField(max_length=5)
-    routeName = models.CharField(max_length=255)
+    routeCode = models.TextField(max_length=5)
+    routeName = models.TextField(max_length=255)
     created = models.DateTimeField(auto_now_add=True)
 
 class Stops(models.Model):
-    stopCode = models.CharField(max_length=5)
-    stopName = models.CharField(max_length=255)
+    stopCode = models.TextField(max_length=5)
+    stopName = models.TextField(max_length=255)
     created = models.DateTimeField(auto_now_add=True)
 
 class Patterns(models.Model):
@@ -56,7 +56,8 @@ class Patterns(models.Model):
 
 class Trips(models.Model):
     pattern = models.ForeignKey(Patterns, related_name='trips')
-    depart = models.DateTimeField()
+    departDate = models.DateField()
+    departTime = models.TimeField()
     boarded = models.IntegerField()
     alighted = models.IntegerField()
     created = models.DateTimeField(auto_now_add=True)

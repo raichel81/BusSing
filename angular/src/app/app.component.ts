@@ -25,6 +25,7 @@ export class AppComponent implements OnInit {
   ngOnInit(): void {
     this.http.get<RouteResponse>('http://localhost:4200/routes').subscribe(data => {
       this.data = data;
+      console.log("hello");
       this.url = data.url;
       this.title = data.title;
       this.code = data.code;
